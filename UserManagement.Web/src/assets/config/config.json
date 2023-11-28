@@ -1,0 +1,7 @@
+{
+	"baseUrl": "http://localhost:41266",
+	"datePipeCulture": "en-US",
+	"dateFormat": "dd/MM/yyyy",
+	"pCalendarDateFormat": "dd/MM/yy",
+	"dateTimeFormat": "dd/MM/yyyy hh:mm:ss"
+}

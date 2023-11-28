@@ -1,0 +1,19 @@
+<ng2-slim-loading-bar color="blue"></ng2-slim-loading-bar>
+<toaster-container [toasterconfig]="toastrConfig"></toaster-container>
+<!-- header -->
+<app-header></app-header>
+
+<div [ngClass]="currentUser ? 'container-body' : 'login-body'">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 offset-sm-12">
+                <alert></alert>
+                <!-- //routes will be rendered here -->
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<app-footer></app-footer>

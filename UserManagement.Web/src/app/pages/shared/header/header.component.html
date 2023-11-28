@@ -1,0 +1,10 @@
+<div class="header" *ngIf="currentUser">
+    <a href="#default" class="logo" routerLink="UserList" routerLinkActive="active">
+        <li class="fa fa-home"></li>
+        Home
+    </a>
+    <div class="header-right">
+        <a href="">{{currentUser.userName}}</a>
+        <a href="" (click)="logout()">Logout</a>
+    </div>
+</div>

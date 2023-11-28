@@ -1,0 +1,68 @@
+<h2>Edit User</h2>
+<hr />
+<form [formGroup]="angForm" novalidate autocomplete="off">
+
+  <div class="form-group">
+    <label class="col-md-2">First Name</label>
+    <input type="text" class="form-control" [readonly]="true" formControlName="FirstName" #FirstName
+      [(ngModel)]="user.firstName" />
+  </div>
+  <div *ngIf="angForm.controls['FirstName'].invalid && (angForm.controls['FirstName'].dirty
+         || angForm.controls['FirstName'].touched)" class="alert alert-danger">
+    <div *ngIf="angForm.controls['FirstName'].errors.required">
+      First Name is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-2">Last Name</label>
+    <input type="text" class="form-control" [readonly]="true" formControlName="LastName" #LastName
+      [(ngModel)]="user.lastName" />
+  </div>
+  <div *ngIf="angForm.controls['LastName'].invalid && (angForm.controls['LastName'].dirty
+         || angForm.controls['LastName'].touched)" class="alert alert-danger">
+    <div *ngIf="angForm.controls['LastName'].errors.required">
+      Last Name is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-2">User Name</label>
+    <input type="text" class="form-control" [readonly]="true" formControlName="UserName" #UserName
+      [(ngModel)]="user.userName" />
+  </div>
+  <div *ngIf="angForm.controls['UserName'].invalid && (angForm.controls['UserName'].dirty
+           || angForm.controls['UserName'].touched)" class="alert alert-danger">
+    <div *ngIf="angForm.controls['UserName'].errors.required">
+      User Name is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-2">Status</label>
+    <label>
+      <input type="radio" [value]="1" formControlName="Status" [(ngModel)]="user.status">
+      <span>Accept</span>
+    </label>
+    <label>
+      <input type="radio" [value]="2" formControlName="Status" [(ngModel)]="user.status">
+      <span>Reject</span>
+    </label>
+  </div>
+  <div *ngIf="angForm.controls['Status'].invalid && (angForm.controls['Status'].dirty
+               || angForm.controls['Status'].touched)" class="alert alert-danger">
+    <div *ngIf="angForm.controls['Status'].errors.required">
+      Status is required.
+    </div>
+  </div>
+
+  <div class="form-group header-right">
+    <button (click)="updateUser(user)" type="submit" class="btn btn-primary" [disabled]="angForm.invalid">
+      Update User
+    </button>
+    &nbsp;&nbsp;
+    <button routerLink="UserList" class="btn btn-primary">
+      Back to List
+    </button>
+  </div>
+</form>

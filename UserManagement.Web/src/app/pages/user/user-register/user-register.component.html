@@ -1,0 +1,89 @@
+<div class="register-container">
+  <h2>User Register</h2>
+  <hr />
+  <form [formGroup]="userForm" novalidate autocomplete="off">
+
+    <div class="form-group">
+      <label class="col-md-4">First Name</label>
+      <input type="text" class="form-control" formControlName="FirstName" #FirstName [(ngModel)]="user.firstName" />
+    </div>
+    <div *ngIf="userForm.controls['FirstName'].invalid && (userForm.controls['FirstName'].dirty
+         || userForm.controls['FirstName'].touched)" class="alert alert-danger">
+      <div *ngIf="userForm.controls['FirstName'].errors.required">
+        First Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4">Last Name</label>
+      <input type="text" class="form-control" formControlName="LastName" #LastName [(ngModel)]="user.lastName" />
+    </div>
+    <div *ngIf="userForm.controls['LastName'].invalid && (userForm.controls['LastName'].dirty
+         || userForm.controls['LastName'].touched)" class="alert alert-danger">
+      <div *ngIf="userForm.controls['LastName'].errors.required">
+        Last Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4">Username</label>
+      <input type="text" class="form-control" formControlName="Username" #Username [(ngModel)]="user.username" />
+    </div>
+    <div *ngIf="userForm.controls['Username'].invalid && (userForm.controls['Username'].dirty
+           || userForm.controls['Username'].touched)" class="alert alert-danger">
+      <div *ngIf="userForm.controls['Username'].errors.required">Username is required</div>
+      <div *ngIf="userForm.controls['Username'].errors.email">Username must contain at least the @ character</div>
+
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4">Email</label>
+      <input type="text" class="form-control" formControlName="Email" #Email [(ngModel)]="user.email" />
+    </div>
+    <div *ngIf="f.Email.invalid && (f.Email.dirty
+           || f.Email.touched)" class="alert alert-danger">
+      <div *ngIf="f.Email.errors.required">Username is required</div>
+      <div *ngIf="f.Email.errors.email">Username must contain at least the @ character</div>
+
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col">
+        <div class="form-group">
+          <label class="col-md-4">Password</label>
+          <input type="password" class="form-control" formControlName="Password" #Password
+            [(ngModel)]="user.password" />
+        </div>
+        <div *ngIf="userForm.controls['Password'].invalid && (userForm.controls['Password'].dirty
+        || userForm.controls['Password'].touched)" class="alert alert-danger">
+          <div *ngIf="userForm.controls['Password'].errors.required">Password is required</div>
+          <div *ngIf="userForm.controls['Password'].errors.pattern">Password must be at least 8 characters long
+            and contain a number and contain one uppercase letter and one lowercase letter and one special character
+          </div>
+        </div>
+      </div>
+      <div class="form-group col">
+        <label>Confirm Password</label>
+        <input type="password" formControlName="ConfirmPassword" #ConfirmPassword class="form-control"
+          [(ngModel)]="user.confirmPassword" />
+        <div *ngIf="userForm.controls['ConfirmPassword'].invalid && (userForm.controls['ConfirmPassword'].dirty
+            || userForm.controls['ConfirmPassword'].touched)" class="alert alert-danger">
+          <div *ngIf="userForm.controls['ConfirmPassword'].errors.required">Confirm Password is required</div>
+          <div *ngIf="f.ConfirmPassword.errors.mustMatch">Passwords must match</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" formControlName="AcceptTerms" #AcceptTerms id="acceptTerms" class="form-check-input" />
+      <label for="acceptTerms" class="form-check-label margin-left-20">Accept Terms & Conditions</label>
+      <div *ngIf="userForm.controls['AcceptTerms'].errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+    </div>
+
+    <div class="form-group">
+      <button (click)="RegisterUser(user)" type="submit" class="btn btn-primary" [disabled]="userForm.invalid">
+        Register User
+      </button>
+      &nbsp;&nbsp;
+      <a routerLink="/login" class="btn btn-primary">Back to Login</a>
+    </div>
+  </form>
+</div>

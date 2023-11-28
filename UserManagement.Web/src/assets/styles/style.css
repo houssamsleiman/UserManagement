@@ -1,0 +1,165 @@
+/*************************************General********************************************/
+body{
+background-image: url("../img/user-management-background.jpg");
+background-color: #cccccc;
+background-repeat: no-repeat;
+background-size: cover;
+height: 100%;
+}
+label {    
+color: #607d8b;
+/* color: white; */
+font-size: x-large;
+}
+.hand{
+cursor: pointer;
+}
+.margin-left-20{
+margin-left: 20px;
+}
+::ng-deep .margin-left-20{
+margin-left: 20px;
+}
+h2 {
+color: #607d8b;
+font-weight: bold;
+}
+.powered-bye {
+display: inline-block;
+color: white; 
+font-size: 14px;
+font-weight: bold;
+padding: 10px;
+}
+body .ui-table .ui-table-thead > tr > th{ 
+color: #ffffff;
+background-color: #17526d;
+}
+body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+background-color: #17526d;
+color: #ffffff;
+}
+@media (min-width: 1200px){
+.login-body .container .register-container{    
+background-color: #fafafa;
+height: calc(100% - 25px);
+}
+.login-body .container .register-container form { 
+padding: 0px 45px;
+}
+.login-body .container .register-container h2 {
+padding: 10px 45px 0 45px;
+}
+.container-body .container {
+background-color: #fafafa;
+height: calc(100vh - 125px);     
+display: table;
+}
+.footer .container {
+background-color: #17526d;
+/* #d0d0d0; */
+}
+}
+/************************************End Of General*****************************************/
+/*************************************Login Page********************************************/
+.login-form {
+background-color: #0e2a50;
+opacity: 0.7;
+border-bottom-left-radius: 0px;
+border-top-right-radius: 0px;
+margin: 20px;
+height: 450px;
+max-height: 450px;
+}
+.login-btn {
+font-size: 16px;
+font-weight: 700;
+border-radius: 0px;
+background: white;
+color: #07254a;
+border: 0px;
+margin-right: 15px;
+height: 35px;
+width: 90px;
+margin-bottom: 15px;
+}
+.btns {
+text-align: center;
+padding: 15px 39px 20px 60px;
+margin-bottom: 50px;
+}
+.logo-title {
+text-align: center;
+padding: 70px 40px 20px 0px;
+margin-bottom: 30px;
+margin-top: 30px;
+background-image: url("../img/user-management-icon.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: 110px 90px;
+}
+.btn-show-pass {
+font-size: 26px;
+color: #999;
+display: flex;
+align-items: center;
+position: absolute;
+height: 100%;
+top: 70px;
+right: 29px;
+padding-right: 5px;
+cursor: pointer;
+transition: all 0.4s;
+} 
+/*******************************End Of Login Page********************************************/
+
+/*******************************Header********************************************/
+.header {
+overflow: hidden;
+background-color:#17526d;
+/* #d0d0d0; */
+padding: 5px 10px;
+}
+
+.header a {
+float: left;
+color: white;
+text-align: center;
+padding: 12px;
+text-decoration: none;
+font-size: 18px; 
+line-height: 25px;
+border-radius: 4px;
+}
+
+.header a.logo {
+font-size: 25px;
+font-weight: bold;
+}
+
+.header a:hover {
+background-color: #a5bcde;
+color: #528aab;
+}
+
+.header a.active {
+background-color: dodgerblue;
+color: white;
+}
+
+.header-right {
+float: right;
+}
+
+@media screen and (max-width: 500px) {
+.header a {
+float: none;
+display: block;
+text-align: left;
+}
+
+.header-right {
+float: none;
+}
+}
+/*******************************End Of Header********************************************/
